@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="LibraryApp">
+    <head>
+        <title>Library Book Genres</title>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="GenreController as genreCtrl">
+            <h2>Select Book Genre</h2>
+            <select ng-model="genreCtrl.selectGenre">
+                <option value="Fiction">Fiction</option>
+                <option value="science fantasy">science fantasy</option>
+                <option value="Crime">Crime</option>
+                <option value="Horror">Horror</option>
+                <option value="poetry">poetry</option>
+            </select>
+        
+        <div ng-switch="genreCtrl.selectGenre">
+            <div ng-switch-when="Fiction">
+                <h3>Fiction</h3>
+                
+                <p>Here in this fiction section, you will explore the imaginary and unusual
+                     fictional experiencs with extra-ordinary stories</p>
+                     <img src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2023/05/18101244/1-2-560x560.jpg">
+            </div>
+            <div ng-switch-when="science fantasy">
+            
+                <h3>science fantasy</h3>
+                <p>Here in this science fantasy  section, you will explore the imaginary and unusual
+                    fictional experiencs with extra-ordinary stories</p>
+                    <img width="300" height="400" src="//kaylmoody.com/wp-content/uploads/2018/07/magnetic-floating-island.jpg">
+            </div>
+            <div ng-switch-when="Crime">
+                <h3>Crime</h3>
+                <p>Here in this crime section of books, you will come to know about the real time killers and the mistery 
+                    behind the cases that are unsolved
+                </p>
+                <img width="300" height="400" src="https://thebookcoverdesigner.com/wp-content/uploads/2017/05/crime-stories-scaled.jpg">
+            </div>
+            <div ng-switch-when="Horror">
+                <h3>Horror</h3>
+                <p>Here in this horror section, you will find new super natural spirits that 
+                    has a belief of ghosting humans for a long
+                </p>
+                <img width="300" height="400" src="https://img.freepik.com/premium-vector/horror-book-cover-design-illustration_619130-639.jpg">
+            </div>
+            <div ng-switch-when="poetry">
+                <h3>poetry</h3>
+                <p>A poetry book can allow writers to explore topics that they may view as too difficult or delicate to express in other forms
+                </p>
+                <img width="300" height="400" src="https://www.bookbaby.com/images/cover-genre/poetry-raven.jpg">
+            </div>
+            <div ng-switch-default>
+                <h3>Select a Genre</h3>
+                <p>Please select a book genre to continue</p>
+                <img width="300" height="400" src="https://static.toiimg.com/thumb/msid-102450202,imgsize-104312,width-900,height-1200,resizemode-6/102450202.jpg">
+            </div>
+        </div>
+    </div>
+        <script>
+            angular.module('LibraryApp',[])
+            .controller('GenreController',function(){
+                var genreCtrl=this;
+                genreCtrl.selectedGenre="";
+            })
+        </script>
+    </body>
+</html>
